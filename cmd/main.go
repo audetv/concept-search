@@ -16,10 +16,15 @@ func main() {
 	}
 
 	// output current time zone
+	outputCurrentTimeZone()
+
+	//ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
+}
+
+// output current time zone
+func outputCurrentTimeZone() {
 	tnow := time.Now()
 	tz, _ := tnow.Zone()
 	log.Printf("Local time zone %s. Service started at %s", tz,
 		tnow.Format("2006-01-02T15:04:05.000 MST"))
-
-	//ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 }
